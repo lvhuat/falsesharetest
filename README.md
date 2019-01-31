@@ -1,3 +1,7 @@
+About
+-------
+[False Sharing](https://en.wikipedia.org/wiki/False_sharing)
+
 Result
 -------
 ```
