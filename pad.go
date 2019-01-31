@@ -10,33 +10,32 @@ import (
 type NoPad struct {
 	a uint64
 	b uint64
-	c uint64
 }
 
-func (myatomic *NoPad) AddA() {
-	myatomic.a++
-	myatomic.a++
-	myatomic.a++
-	myatomic.a++
-	myatomic.a++
-	myatomic.a++
-	myatomic.a++
-	myatomic.a++
-	myatomic.a++
-	myatomic.a++
+func (nopad *NoPad) AddA() {
+	nopad.a++
+	nopad.a++
+	nopad.a++
+	nopad.a++
+	nopad.a++
+	nopad.a++
+	nopad.a++
+	nopad.a++
+	nopad.a++
+	nopad.a++
 }
 
-func (myatomic *NoPad) AddB() {
-	myatomic.b++
-	myatomic.b++
-	myatomic.b++
-	myatomic.b++
-	myatomic.b++
-	myatomic.b++
-	myatomic.b++
-	myatomic.b++
-	myatomic.b++
-	myatomic.b++
+func (nopad *NoPad) AddB() {
+	nopad.b++
+	nopad.b++
+	nopad.b++
+	nopad.b++
+	nopad.b++
+	nopad.b++
+	nopad.b++
+	nopad.b++
+	nopad.b++
+	nopad.b++
 }
 
 type Pad struct {
@@ -46,30 +45,30 @@ type Pad struct {
 	b   uint64
 }
 
-func (myatomic *Pad) AddA() {
-	myatomic.a++
-	myatomic.a++
-	myatomic.a++
-	myatomic.a++
-	myatomic.a++
-	myatomic.a++
-	myatomic.a++
-	myatomic.a++
-	myatomic.a++
-	myatomic.a++
+func (pad *Pad) AddA() {
+	pad.a++
+	pad.a++
+	pad.a++
+	pad.a++
+	pad.a++
+	pad.a++
+	pad.a++
+	pad.a++
+	pad.a++
+	pad.a++
 }
 
-func (myatomic *Pad) AddB() {
-	myatomic.b++
-	myatomic.b++
-	myatomic.b++
-	myatomic.b++
-	myatomic.b++
-	myatomic.b++
-	myatomic.b++
-	myatomic.b++
-	myatomic.b++
-	myatomic.b++
+func (pad *Pad) AddB() {
+	pad.b++
+	pad.b++
+	pad.b++
+	pad.b++
+	pad.b++
+	pad.b++
+	pad.b++
+	pad.b++
+	pad.b++
+	pad.b++
 }
 
 func main() {
