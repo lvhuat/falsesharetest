@@ -4,6 +4,8 @@
 #include <thread>
 #include <atomic>
 
+// command line: gcc main.cpp -std=c++11 -o main -lstdc++ -lpthread
+
 struct nopad {
         uint64_t a;
         uint64_t b;
