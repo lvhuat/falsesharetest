@@ -18,6 +18,17 @@ struct pad {
         uint64_t b;
 };
 
+void bindcpu(int i)
+{
+        cpu_set_t mask;
+        CPU_ZERO(&mask);
+        CPU_SET(i, &mask);
+        if (pthread_setaffinity_np(pthread_self(), sizeof(mask), &mask) < 0)
+        {
+                fprintf(stderr, "set thread affinity failed\n");
+                exit(-1);
+        }
+}
 
 
 int main(){
@@ -26,6 +37,7 @@ int main(){
         a->a = 0;
         a->b = 0;
         std::thread ta([&]{
+                bindcpu(0);
                 while(1){
                         a->a++;
                         a->a++;
@@ -41,6 +53,7 @@ int main(){
         });
 
         std::thread tb([&]{
+                bindcpu(1);
                 while(1){
                         a->b++;
                         a->b++;
